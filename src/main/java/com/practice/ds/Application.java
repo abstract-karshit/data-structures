@@ -10,12 +10,12 @@ public class Application {
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<Integer>();
 
-        list.append(1);
-        list.append(2);
-        list.append(3);
-        list.append(4);
-        list.append(5);
+        list.append(1112213);
+        list.append(1112213);
+        list.append(11112213);
+        list.append(1112213);
+        list.append(100000);
 
-        System.out.println(list.count(1));
+        System.out.println(list.count(1112213));
     }
 }

@@ -76,7 +76,7 @@ public class LinkedList<T> {
             return;
         }
 
-        if ((head.getData() instanceof String && head.getData().equals(key)) || head.getData() == key) {
+        if (head.getData().equals(key)) {
             head = head.getNext();
             deleteNode(key);
         }
@@ -84,7 +84,7 @@ public class LinkedList<T> {
         Node<T> temp = head;
 
         while (null != temp && null != temp.getNext()) {
-            if ((temp.getNext().getData() instanceof String && temp.getNext().getData().equals(key)) || temp.getNext().getData() == key) {
+            if (temp.getNext().getData().equals(key)) {
                 Node<T> nodeToBeDeleted = temp.getNext();
                 temp.setNext(nodeToBeDeleted.getNext());
 
@@ -157,7 +157,7 @@ public class LinkedList<T> {
         Node<T> temp = head;
 
         while (temp != null) {
-            if ((temp.getData() instanceof String && temp.getData().equals(element)) || temp.getData() == element) {
+            if (temp.getData().equals(element)) {
                 return true;
             }
 
@@ -173,24 +173,24 @@ public class LinkedList<T> {
             return false;
         }
 
-        return ((temp.getData() instanceof String && temp.getData().equals(element)) || temp.getData() == element)
+        return (temp.getData().equals(element))
                 || findRecursive(temp.getNext(), element);
     }
 
     public void swap(T x, T y) {
-        if ((x instanceof String && x.equals(y)) || x == y) {
+        if (x.equals(y)) {
             return;
         }
 
         Node<T> prevX = null, currX = head;
         Node<T> prevY = null, currY = head;
 
-        while (currX != null && ((currX.getData() instanceof String && !currX.getData().equals(x)) || currX.getData() != x)) {
+        while (currX != null && !currX.getData().equals(x)) {
             prevX = currX;
             currX = currX.getNext();
         }
 
-        while (currY != null && ((currY.getData() instanceof String && !currY.getData().equals(y)) || currY.getData() != y)) {
+        while (currY != null && (!currY.getData().equals(y))) {
             prevY = currY;
             currY = currY.getNext();
         }
@@ -297,7 +297,7 @@ public class LinkedList<T> {
         int count = 0;
 
         while (temp != null) {
-            if ((temp.getData() instanceof String && temp.getData().equals(key)) || temp.getData() == key) {
+            if (temp.getData().equals(key)) {
                 count++;
             }
 

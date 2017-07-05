@@ -38,7 +38,7 @@ public class Node<T> implements Comparable<T> {
     }
 
     public int compareTo(T o) {
-        if ((o instanceof String && o.equals(this.data)) || o == this.data) {
+        if (o.equals(this.data)) {
             return 0;
         } else {
             return 1;
