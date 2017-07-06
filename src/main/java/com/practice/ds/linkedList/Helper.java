@@ -18,7 +18,7 @@ public final class Helper {
         Node<T> iter2 = second.getHead();
 
         while (iter1 != null && iter2 != null) {
-            if (((Comparable) iter2.getData()).compareTo((Comparable) iter1.getData()) > 0) {
+            if (((Comparable) iter2.getData()).compareTo(iter1.getData()) > 0) {
                 list.append(iter1.getData());
                 iter1 = iter1.getNext();
             } else {
