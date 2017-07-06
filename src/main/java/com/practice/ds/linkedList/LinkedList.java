@@ -307,4 +307,26 @@ public class LinkedList<T> {
         return count;
     }
 
+    public void reverse() {
+        if (head == null || head.getNext() == null) {
+            return;
+        }
+
+        tail = head;
+        Node<T> first = head;
+        Node<T> second = first.getNext();
+        Node<T> third = second.getNext();
+        first.setNext(null);
+
+        while (third != null) {
+            second.setNext(first);
+            first = second;
+            second = third;
+            third = third.getNext();
+        }
+
+        second.setNext(first);
+        head = second;
+    }
+
 }
