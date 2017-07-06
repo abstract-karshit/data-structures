@@ -329,4 +329,19 @@ public class LinkedList<T> {
         head = second;
     }
 
+    public void reverseRecursive(Node<T> node, Node<T> prev) {
+        if (node.getNext() == null) {
+            node.setNext(prev);
+            head = node;
+            return;
+        }
+
+        if (prev == null) {
+            tail = head;
+        }
+
+        reverseRecursive(node.getNext(), node);
+        node.setNext(prev);
+    }
+
 }

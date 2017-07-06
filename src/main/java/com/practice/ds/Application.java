@@ -17,7 +17,7 @@ public class Application {
         list.append(5);
 
         list.print();
-        list.reverse();
+        list.reverseRecursive(list.getHead(), null);
         list.print();
     }
 }
