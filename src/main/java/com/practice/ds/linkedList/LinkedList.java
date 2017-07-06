@@ -367,4 +367,24 @@ public class LinkedList<T> {
 
         return false;
     }
+
+    public void sortedInsert(T element) {
+        if (head == null) {
+            append(element);
+            return;
+        }
+
+        Node<T> iter = head;
+
+        if (((Comparable) head.getData()).compareTo(element) > 0) {
+            push(element);
+            return;
+        }
+
+        while (iter.getNext() != null && ((Comparable) iter.getNext().getData()).compareTo(element) < 0) {
+            iter = iter.getNext();
+        }
+
+        insertAfter(iter, element);
+    }
 }
