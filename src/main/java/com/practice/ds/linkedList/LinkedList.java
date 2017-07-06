@@ -344,4 +344,28 @@ public class LinkedList<T> {
         node.setNext(prev);
     }
 
+    public boolean isLoop() {
+        if (head == null || head.getNext() == null) {
+            return false;
+        }
+
+        if (head.getNext().equals(head)) {
+            return true;
+        }
+
+        Node<T> fast = head;
+        Node<T> slow = head;
+
+        while (slow != null && fast != null && fast.getNext() != null) {
+            slow = slow.getNext();
+            fast = fast.getNext().getNext();
+
+            if (slow.equals(fast)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }

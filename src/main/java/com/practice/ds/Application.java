@@ -13,11 +13,7 @@ public class Application {
         list.append(1);
         list.append(2);
         list.append(3);
-        list.append(4);
-        list.append(5);
+        System.out.println(list.isLoop());
 
-        list.print();
-        list.reverseRecursive(list.getHead(), null);
-        list.print();
     }
 }
